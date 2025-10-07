@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sensei Team Software</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Renk Tanımı -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              sensei: '#00FFC2',
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-black text-white font-sans">
+    <!-- Navbar -->
+    <nav class="flex items-center justify-between px-10 py-6 bg-black/60 backdrop-blur-md sticky top-0 z-50 border-b border-neutral-800 shadow-md">
+      <h1 class="text-3xl font-bold text-sensei">Sensei Team</h1>
+      <div class="space-x-8 hidden md:flex text-sm">
+        <a href="#app" class="hover:text-sensei transition">Uygulamamız</a>
+        <a href="#about" class="hover:text-sensei transition">Hakkımızda</a>
+        <a href="#contact" class="hover:text-sensei transition">İletişim</a>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.SenseiTeamSoftware.SenseiAi"
+          target="_blank"
+          class="bg-sensei text-black px-5 py-2 rounded-xl font-semibold hover:bg-[#00e6af] transition"
+        >
+          Uygulamayı İndir
+        </a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="px-10 py-24 grid md:grid-cols-2 gap-16 items-center">
+      <div>
+        <h2 class="text-5xl font-extrabold leading-tight mb-6">
+          Geleceğin Eğitim<br />Uygulamalarıyla Tanışın
+        </h2>
+        <p class="text-lg text-neutral-300 mb-6 max-w-md">
+          Sensei Team Software ile teknoloji ve eğitimi bir araya getiriyoruz.
+          Yapay zeka destekli uygulamamızla öğrenme deneyiminizi bir üst seviyeye taşıyoruz.
+        </p>
+        <a
+          href="https://play.google.com/store/apps/details?id=com.SenseiTeamSoftware.SenseiAi"
+          target="_blank"
+          class="inline-block bg-sensei text-black px-6 py-3 rounded-xl font-semibold shadow hover:bg-[#00e6af] transition"
+        >
+          Play Store’dan İndir
+        </a>
+      </div>
+      <div>
+        <img
+          src="https://play-lh.googleusercontent.com/4w0Qly4GzL3pnvfFRkX5F-rsbw1sRsY4bj81HOoe_YcJTbfxdwiMW_24pl7bbnog58Q=w480-h960-rw"
+          alt="Sensei AI App"
+          class="rounded-3xl shadow-2xl border-2 border-sensei/30 w-72 mx-auto"
+        />
+      </div>
+    </section>
+
+    <!-- Özellikler -->
+    <section id="app" class="px-10 py-24 bg-neutral-950">
+      <h3 class="text-4xl font-bold mb-12 text-center">Uygulama Özellikleri</h3>
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div class="bg-neutral-900 p-8 rounded-2xl shadow hover:scale-105 transition hover:shadow-lg border border-sensei/30">Yapay Zeka Destekli</div>
+        <div class="bg-neutral-900 p-8 rounded-2xl shadow hover:scale-105 transition hover:shadow-lg border border-sensei/30">Öğrenme Odaklı Arayüz</div>
+        <div class="bg-neutral-900 p-8 rounded-2xl shadow hover:scale-105 transition hover:shadow-lg border border-sensei/30">Modern Tasarım</div>
+        <div class="bg-neutral-900 p-8 rounded-2xl shadow hover:scale-105 transition hover:shadow-lg border border-sensei/30">Gelişim Takibi</div>
+      </div>
+    </section>
+
+    <!-- Hakkımızda -->
+    <section id="about" class="px-10 py-24 bg-black">
+      <h3 class="text-4xl font-bold mb-6">Hakkımızda</h3>
+      <p class="text-neutral-300 max-w-3xl leading-relaxed">
+        Sensei Team Software olarak, eğitim teknolojileri alanında yenilikçi çözümler sunmak için yola çıktık.
+        Amacımız, öğrenmeyi herkes için daha erişilebilir, daha verimli ve daha eğlenceli hale getirmek.
+        Sensei AI, bu vizyonun ilk adımıdır.
+      </p>
+    </section>
+
+    <!-- İletişim -->
+    <section id="contact" class="px-10 py-24 bg-neutral-950">
+      <h3 class="text-4xl font-bold mb-10">İletişim</h3>
+      <div class="space-y-6 text-lg text-neutral-300">
+        <p><strong class="text-sensei">📧</strong> info@senseiteam.com</p>
+        <p><strong class="text-sensei">📞</strong> +90 555 555 55 55</p>
+        <p><strong class="text-sensei">💻</strong> github.com/senseiteam</p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm py-6 text-neutral-500 bg-black border-t border-neutral-800">
+      © 2025 Sensei Team Software. Tüm hakları saklıdır.
+    </footer>
+  </body>
+</html>
