@@ -1,135 +1,324 @@
 <!DOCTYPE html>
 <html lang="tr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SenseiApp - Hayatını Kolaylaştır</title>
+  <style>
+    :root {
+      --bg: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
+      --text: #222;
+      --card: rgba(255, 255, 255, 0.7);
+      --accent: #3aafa9;
+      --accent-dark: #2b7a78;
+    }
 
-    <!-- ✅ Google Doğrulama Etiketi (Doğru konumda) -->
-    <meta
-      name="google-site-verification"
-      content="QpHL5omEhEBa8RLIXraDCmSI-BK6JquDi1YEagjI5MI"
-    />
+    body.dark {
+      --bg: linear-gradient(to bottom right, #222, #111);
+      --text: #eee;
+      --card: rgba(40, 40, 40, 0.9);
+    }
 
-    <title>Sensei Team Software</title>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.6s ease, color 0.6s ease;
+      overflow-x: hidden;
+    }
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 10%;
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      transition: background 0.4s ease;
+    }
 
-    <!-- Renk Tanımı -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              sensei: "#00FFC2",
-            },
-          },
-        },
-      };
-    </script>
-  </head>
+    header h1 {
+      font-size: 1.8em;
+      color: var(--accent-dark);
+    }
 
-  <body class="bg-black text-white font-sans">
-    <!-- Navbar -->
-    <nav
-      class="flex items-center justify-between px-10 py-6 bg-black/60 backdrop-blur-md sticky top-0 z-50 border-b border-neutral-800 shadow-md"
-    >
-      <h1 class="text-3xl font-bold text-sensei">Sensei Team</h1>
-      <div class="space-x-8 hidden md:flex text-sm">
-        <a href="#app" class="hover:text-sensei transition">Uygulamamız</a>
-        <a href="#about" class="hover:text-sensei transition">Hakkımızda</a>
-        <a href="#contact" class="hover:text-sensei transition">İletişim</a>
-        <a
-          href="https://play.google.com/store/apps/details?id=com.SenseiTeamSoftware.SenseiAi"
-          target="_blank"
-          class="bg-sensei text-black px-5 py-2 rounded-xl font-semibold hover:bg-[#00e6af] transition"
-        >
-          Uygulamayı İndir
-        </a>
-      </div>
-    </nav>
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: 0.2s;
+    }
 
-    <!-- Hero -->
-    <section class="px-10 py-24 grid md:grid-cols-2 gap-16 items-center">
-      <div>
-        <h2 class="text-5xl font-extrabold leading-tight mb-6">
-          Geleceğin Eğitim<br />Uygulamalarıyla Tanışın
-        </h2>
-        <p class="text-lg text-neutral-300 mb-6 max-w-md">
-          Sensei Team Software ile teknoloji ve eğitimi bir araya getiriyoruz.
-          Yapay zeka destekli uygulamamızla öğrenme deneyiminizi bir üst
-          seviyeye taşıyoruz.
-        </p>
-        <a
-          href="https://play.google.com/store/apps/details?id=com.SenseiTeamSoftware.SenseiAi"
-          target="_blank"
-          class="inline-block bg-sensei text-black px-6 py-3 rounded-xl font-semibold shadow hover:bg-[#00e6af] transition"
-        >
-          Play Store’dan İndir
-        </a>
-      </div>
-      <div>
-        <img
-          src="https://play-lh.googleusercontent.com/4w0Qly4GzL3pnvfFRkX5F-rsbw1sRsY4bj81HOoe_YcJTbfxdwiMW_24pl7bbnog58Q=w480-h960-rw"
-          alt="Sensei AI App"
-          class="rounded-3xl shadow-2xl border-2 border-sensei/30 w-72 mx-auto"
-        />
-      </div>
-    </section>
+    nav a:hover {
+      color: var(--accent-dark);
+    }
 
-    <!-- Özellikler -->
-    <section id="app" class="px-10 py-24 bg-neutral-950">
-      <h3 class="text-4xl font-bold mb-12 text-center">Uygulama Özellikleri</h3>
-      <div class="grid md:grid-cols-4 gap-8 text-center">
-        <div
-          class="bg-neutral-900 p-8 rounded-2xl shadow hover:scale-105 transition hover:shadow-lg border border-sensei/30"
-        >
-          Yapay Zeka Destekli
-        </div>
-        <div
-          class="bg-neutral-900 p-8 rounded-2xl shadow hover:scale-105 transition hover:shadow-lg border border-sensei/30"
-        >
-          Öğrenme Odaklı Arayüz
-        </div>
-        <div
-          class="bg-neutral-900 p-8 rounded-2xl shadow hover:scale-105 transition hover:shadow-lg border border-sensei/30"
-        >
-          Modern Tasarım
-        </div>
-        <div
-          class="bg-neutral-900 p-8 rounded-2xl shadow hover:scale-105 transition hover:shadow-lg border border-sensei/30"
-        >
-          Gelişim Takibi
-        </div>
-      </div>
-    </section>
+    .toggle-theme {
+      cursor: pointer;
+      background: var(--accent);
+      border: none;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 25px;
+      transition: 0.3s;
+    }
 
-    <!-- Hakkımızda -->
-    <section id="about" class="px-10 py-24 bg-black">
-      <h3 class="text-4xl font-bold mb-6">Hakkımızda</h3>
-      <p class="text-neutral-300 max-w-3xl leading-relaxed">
-        Sensei Team Software olarak, eğitim teknolojileri alanında yenilikçi
-        çözümler sunmak için yola çıktık. Amacımız, öğrenmeyi herkes için daha
-        erişilebilir, daha verimli ve daha eğlenceli hale getirmek. Sensei AI,
-        bu vizyonun ilk adımıdır.
-      </p>
-    </section>
+    .toggle-theme:hover {
+      background: var(--accent-dark);
+    }
 
-    <!-- İletişim -->
-    <section id="contact" class="px-10 py-24 bg-neutral-950">
-      <h3 class="text-4xl font-bold mb-10">İletişim</h3>
-      <div class="space-y-6 text-lg text-neutral-300">
-        <p><strong class="text-sensei">📧</strong> info@senseiteam.com</p>
-        <p><strong class="text-sensei">📞</strong> +90 555 555 55 55</p>
-        <p><strong class="text-sensei">💻</strong> github.com/senseiteam</p>
-      </div>
-    </section>
+    .hero {
+      text-align: center;
+      padding: 120px 10%;
+      animation: fadeIn 1.2s ease;
+    }
 
-    <!-- Footer -->
-    <footer
-      class="text-center text-sm py-6 text-neutral-500 bg-black border-t border-neutral-800"
-    >
-      © 2025 Sensei Team Software. Tüm hakları saklıdır.
-    </footer>
-  </body>
+    .hero h2 {
+      font-size: 2.8em;
+      color: var(--accent-dark);
+      margin-bottom: 20px;
+      animation: slideIn 1.2s ease;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      animation: fadeIn 2s ease;
+    }
+
+    .app-download {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .app-download img.logo {
+      width: 256px;
+      height: 256px;
+      border-radius: 30px;
+      animation: fadeIn 1.2s ease;
+    }
+
+    .store-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .store-buttons a img {
+      height: 55px;
+      transition: transform 0.3s ease;
+    }
+
+    .store-buttons a img:hover {
+      transform: scale(1.08);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 80px 10%;
+      text-align: center;
+      animation: fadeIn 2s ease;
+    }
+
+    .feature-card {
+      background: var(--card);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-card h3 {
+      color: var(--accent-dark);
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 10%;
+      background: var(--card);
+    }
+
+    .chat-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5em;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .chat-btn:hover {
+      transform: scale(1.1);
+      background: var(--accent-dark);
+    }
+
+    .chat-window {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      background: var(--card);
+      border-radius: 15px;
+      width: 280px;
+      height: 350px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background: var(--accent);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    .chat-input {
+      display: flex;
+      padding: 10px;
+    }
+
+    .chat-input input {
+      flex: 1;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+    }
+
+    .chat-input button {
+      background: var(--accent-dark);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes slideIn {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://i.pinimg.com/736x/69/70/76/69707696da9c90d4640f605bf02948de.jpg" alt="YKS Logo" style="height: 45px; border-radius: 8px;" />
+    <h1>YKS Taktikleri 2026</h1>
+  </div>
+  <nav>
+    <a href="index.html" style="color:var(--accent-dark); font-weight:700;">Ana Sayfa</a>
+    <a href="hakkimizda.html">Hakkımızda</a>
+    <a href="gizlilik.html">Gizlilik</a>
+    <a href="iletisim.html">İletişim</a>
+  </nav>
+  <button class="toggle-theme" onclick="toggleTheme()">🌙</button>
+</header>
+
+<div class="hero">
+  <h2>Dersleri kolaylaştıran uygulama 📚</h2>
+  <p>YKS Taktikleri 2026, planlama, süre tutma, YKS'ye kalan süre ve üretkenlikte sana yardımcı olur.</p>
+
+  <div class="app-download">
+    <img src="https://i.pinimg.com/736x/69/70/76/69707696da9c90d4640f605bf02948de.jpg" class="logo" alt="SenseiApp Logo">
+    <div class="store-buttons">
+      <a href="https://play.google.com/store/apps/details?id=com.senseiteamsoftware.tytbiyoloji&pcampaignid=web_share" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play">
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="features">
+  <div class="feature-card">
+    <h3>🧭 Kolay Kullanım</h3>
+    <p>Basit, sezgisel ve kullanıcı dostu arayüz.</p>
+  </div>
+  <div class="feature-card">
+    <h3>⏰ Hatırlatıcılar</h3>
+    <p>Hiçbir görevi kaçırma, günlük bildirimlerle organize ol.</p>
+  </div>
+  <div class="feature-card">
+    <h3>❌ Yanlışlarını Tespit Etme</h3>
+    <p>Yaptığın soruları kontrol edip yanlışlarını sana söyler.</p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 SenseiApp | Tüm Hakları Saklıdır</p>
+</footer>
+
+<!-- Chat -->
+<button class="chat-btn" onclick="toggleChat()">💬</button>
+<div class="chat-window" id="chatWindow">
+  <div class="chat-header">SenseiApp Destek</div>
+  <div class="chat-body" id="chatBody">
+    <p>👋 Merhaba! Size nasıl yardımcı olabilirim?</p>
+  </div>
+  <div class="chat-input">
+    <input type="text" id="chatMessage" placeholder="Mesaj yaz..." />
+    <button onclick="sendMessage()">➤</button>
+  </div>
+</div>
+
+<script>
+  function toggleTheme() {
+    document.body.classList.toggle("dark");
+  }
+
+  function toggleChat() {
+    const chat = document.getElementById("chatWindow");
+    chat.style.display = chat.style.display === "flex" ? "none" : "flex";
+  }
+
+  function sendMessage() {
+    const input = document.getElementById("chatMessage");
+    const msg = input.value.trim();
+    if (msg) {
+      const body = document.getElementById("chatBody");
+      const p = document.createElement("p");
+      p.textContent = "👤 " + msg;
+      body.appendChild(p);
+      input.value = "";
+      body.scrollTop = body.scrollHeight;
+    }
+  }
+</script>
+
+</body>
 </html>
